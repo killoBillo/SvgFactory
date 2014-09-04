@@ -870,7 +870,62 @@ $svg->render();</code></pre>
                     <p class="lead">In SvgFactory are included a few classes that simplify the use of the base elements, helping the developer to design complex polygons without having to calculate the coordinates that compose them. In other words, for instance, you can draw an hexagon passing to class "RegularPolygon" just the number of sides that will have your polygon, without having to worry about calculating all the points that compose it.</p>
 
                     <h3 id="RegularPolygon-class">RegularPolygon class</h3>
+                    <div>
+                        <p>The regular polygon class makes it possible to draw a polygon without having to calculate every single point, but let the machine doing the dirty work in your place.</p>
+                        <pre class="line-numbers"><code class="language-php">$svg = SvgFactory::create('Svg')->setData(array('height'=>240, 'width'=>240));
+$svg->append(SvgFactory::create('RegularPolygon'))->setData(array(
+    'numSides'=>18,
+    'cx'=>120,
+    'cy'=>120,
+    'r'=>120,
+    'fill'=>'tomato',
+    'transform'=>'rotate(-90 120 120)'
+));
+
+$svg->render();</code></pre>
+                        <p>This code will generate the following output:</p>
+                        <?php
+                        $svg = SvgFactory::create('Svg')->setData(array('height'=>240, 'width'=>240));
+                        $svg->append(SvgFactory::create('RegularPolygon'))->setData(array(
+                            'numSides'=>18,
+                            'cx'=>120,
+                            'cy'=>120,
+                            'r'=>120,
+                            'fill'=>'tomato',
+                            'transform'=>'rotate(-90 120 120)'
+                        ));
+
+                        $svg->render();
+                        ?>
+                    </div>
+
                     <h3 id="Star-class">Star class</h3>
+                    <div>
+                        <p>The Star class makes it possible to draw a star without having to calculate every single point, but let the machine doing the dirty work in your place.</p>
+                        <pre class="line-numbers"><code class="language-php">$svg = SvgFactory::create('Svg')->setData(array('height'=>240, 'width'=>240));
+$svg->append(SvgFactory::create('Star'))->setData(array(
+    'outerRadius'=>120,
+    'innerRadius'=>-120,
+    'cx'=>120,
+    'cy'=>120,
+    'fill'=>'tomato',
+));
+
+$svg->render();</code></pre>
+                        <p>This code will generate the following output:</p>
+                        <?php
+                        $svg = SvgFactory::create('Svg')->setData(array('height'=>240, 'width'=>240));
+                        $svg->append(SvgFactory::create('Star'))->setData(array(
+                            'outerRadius'=>120,
+                            'innerRadius'=>-120,
+                            'cx'=>120,
+                            'cy'=>120,
+                            'fill'=>'tomato',
+                        ));
+
+                        $svg->render();
+                        ?>
+                    </div>
                 </div><!-- /bs-docs-section -->
 
 <!--                <div class="bs-docs-section">-->
